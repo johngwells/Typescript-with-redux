@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { Dispatch } from 'redux';
-
 import { ActionType } from '../types';
 import { Action } from '../actions';
 
@@ -23,6 +22,8 @@ export const searchRepo = (term: string) => {
       const names = data.objects.map((result: any) => {
         return result.package.name;
       });
+
+      console.log(names);
 
       dispatch({
         type: ActionType.SEARCH_REPO_SUCCESS,

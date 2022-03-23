@@ -1,32 +1,19 @@
-import { useEffect } from 'react';
+import { Provider } from 'react-redux';
+import { store } from './redux';
 
 import './App.css';
+import RepoList from './components/RepoList';
 
 function App() {
-  // async function getData() {
-  //   let config = {
-  //     headers: {
-  //       Accept: 'application/json'
-  //     }
-  //   };
-  //   const response = await fetch(
-  //     'https://registry.npmjs.org/-/v1/search?text=react',
-  //     config
-  //   );
-  //   const data = await response.json();
-  //   console.log(data.objects);
-  // }
-
-  // useEffect(() => {
-  //   getData();
-  // }, []);
-
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <h1>Redux with TypeScript</h1>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className='App'>
+        <header className='App-header'>
+          <h1>Redux with TypeScript</h1>
+          <RepoList />
+        </header>
+      </div>
+    </Provider>
   );
 }
 
