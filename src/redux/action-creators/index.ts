@@ -23,8 +23,6 @@ export const searchRepo = (term: string) => {
         return result.package.name;
       });
 
-      console.log(names);
-
       dispatch({
         type: ActionType.SEARCH_REPO_SUCCESS,
         payload: names
